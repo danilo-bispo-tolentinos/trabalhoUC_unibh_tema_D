@@ -15,7 +15,10 @@ import { CarouselOneComponent } from './components/carousel/carousel-one/carouse
 import { CardOneComponent } from './components/cards/card-one/card-one.component';
 import { FooterOneComponent } from './layout/footer/footer-one/footer-one.component';
 import { SectionOneComponent } from './components/sections/section-one/section-one.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import * as echarts from 'echarts';
+import { MatSelectModule } from '@angular/material/select';
+import { NgxEchartsModule } from 'ngx-echarts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,9 +37,14 @@ import { SectionOneComponent } from './components/sections/section-one/section-o
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    HttpClientModule,
+    MatSelectModule,
+    NgxEchartsModule.forRoot({
+      echarts,
+    }),
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
